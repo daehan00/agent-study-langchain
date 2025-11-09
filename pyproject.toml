@@ -1,0 +1,12 @@
+[project]
+name = "agent-study-langgraph"
+version = "0.1.0"
+description = "LangGraph agent study project"
+requires-python = ">=3.13"
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+    "langchain>=0.1.0",
+    "langgraph>=0.1.0",
+    "langchain-google-genai>=1.0.0",
+]

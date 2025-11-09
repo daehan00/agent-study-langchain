@@ -1,0 +1,6 @@
+load_dotenv
+pydantic
+
+langchain
+langgraph
+langchain_google_genai
