@@ -1,3 +1,5 @@
+ipykernel
+
 load_dotenv
 pydantic
 
