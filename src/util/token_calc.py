@@ -1,21 +1,66 @@
 from typing import Any
 from langchain.messages import AnyMessage, AIMessage
 
-gemini_base = 1_000_000
+base = 1_000_000
 
 PRICES = {
     "gemini-2.5-flash-lite": {
-        "input": (0.1 / gemini_base, 0.1 / gemini_base),
-        "output": (0.4 / gemini_base, 0.4 / gemini_base)
+        "input": (0.1 / base, 0.1 / base),
+        "output": (0.4 / base, 0.4 / base)
     },
     "gemini-2.5-flash": {
-        "input": (0.3 / gemini_base, 0.3 / gemini_base),
-        "output": (2.5 / gemini_base, 2.5 / gemini_base)
+        "input": (0.3 / base, 0.3 / base),
+        "output": (2.5 / base, 2.5 / base)
     },
     "gemini-2.5-pro": {
-        "input": (1.25 / gemini_base, 2.5 / gemini_base),
-        "output": (10 / gemini_base, 15 / gemini_base)
-    }
+        "input": (1.25 / base, 2.5 / base),
+        "output": (10 / base, 15 / base)
+    },
+    "gpt-5-nano": {
+        "input": (0.05 / base, 0.05 / base),
+        "output": (0.4 / base, 0.4 / base)
+    },
+    "gpt-5-mini": {
+        "input": (0.25 / base, 0.25 / base),
+        "output": (2.0 / base, 2.0 / base)
+    },
+    "gpt-5": {
+        "input": (1.25 / base, 1.25 / base),
+        "output": (10 / base, 15 / base)
+    },
+    "gpt-5-pro": {
+        "input": (15.0 / base, 15.0 / base),
+        "output": (120 / base, 120 / base)
+    },
+    # Claude models - ≤200K tokens / >200K tokens
+    "claude-opus-4-1": {
+        "input": (15.0 / base, 15.0 / base),
+        "output": (75 / base, 75 / base)
+    },
+    "claude-opus-4": {
+        "input": (15.0 / base, 15.0 / base),
+        "output": (75 / base, 75 / base)
+    },
+    "claude-sonnet-4-5": {
+        "input": (3.0 / base, 6.0 / base),
+        "output": (15 / base, 22.5 / base)
+    },
+    "claude-sonnet-4": {
+        "input": (3.0 / base, 6.0 / base),
+        "output": (15 / base, 22.5 / base)
+    },
+    "claude-haiku-4-5": {
+        "input": (1.0 / base, 1.0 / base),
+        "output": (5 / base, 5 / base)
+    },
+    "claude-haiku-3-5": {
+        "input": (0.80 / base, 0.80 / base),
+        "output": (4 / base, 4 / base)
+    },
+    "claude-haiku-3": {
+        "input": (0.25 / base, 0.25 / base),
+        "output": (1.25 / base, 1.25 / base)
+    },
 }
 
 def _check_valid_message(message: AIMessage) -> tuple[bool, str]:

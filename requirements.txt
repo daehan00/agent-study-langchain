@@ -6,3 +6,5 @@ pydantic
 langchain
 langgraph
 langchain_google_genai
+langchain-openai
+langchain-anthropic
